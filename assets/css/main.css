@@ -1,0 +1,37 @@
+.post-title {
+  margin-bottom: 0px;
+}
+.post-header {
+  margin-bottom: 30px;
+}
+.post-content > ol {
+  font-size:20px;
+}
+.post-content > ul {
+  font-size:20px;
+}
+footer.post-meta {
+  padding:0px;
+  margin-bottom:30px;
+}
+.post-container {
+  margin-bottom:50px;
+}
+.post-excerpt {
+  margin-bottom:10px;
+}
+.pagination {
+ display:block;
+}
+.older-posts {
+ float:right;
+}
+.page-number {
+  text-align:center;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+.author-img {
+  max-width:85px;
+}

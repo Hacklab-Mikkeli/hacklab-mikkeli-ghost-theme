@@ -1,39 +1,34 @@
 {{!< default}}
 
-<section id="about" class="container content-section text-center">
+<section id="about" class="container content-section">
     {{#author}}
-        <h1>{{name}}</h1>
+    <section class="author-profile text-center">
+      <span>Posts by:</span>
+      <h1 class="author-title">{{name}}</h1>
+      <h2 class="author-bio">{{bio}}</h2>
+    </section>
     {{/author}} 
     {{#foreach posts}}
-
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-				<header>
-					<h2 itemprop="name headline"><a href="{{url}}">{{{title}}}</a></h2>
-				</header>
-				<section class="visible-xs-block mobile-side">
-					<p>
-						<time datetime="{{date format='YYYY-MM-DD'}}">{{date format='DD MMM YYYY'}}</time>
-						<span class="text-muted">
-							{{tags separator=" / "}}
-						</span>
-					</p>
-				</section>
-				<section itemprop="articleBody text">
-					<p>{{excerpt}}&hellip;</p>
-				</section>
-				<footer>
-					<p>
-						<a href="{{url}}">Read More</a>
-					</p>
-				</footer>
-            </div>    
+        <div class="row post-container">
+          <div class="col-lg-8 col-lg-offset-2">
+            <header class="post-header text-center">
+              <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+            </header>
+            <section class="post-content">
+              <p class="post-excerpt">{{excerpt}}&hellip;
+                <span>
+                  <a href="{{url}}">>></a>
+                </span>
+              </p>
+            </section>
+            <footer class="post-meta">
+                {{author}}
+                {{tags prefix=" on "}}
+                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+            </footer>
+          </div>         
         </div>
-
+        
     {{/foreach}}
-
-    {{!! After all the posts, we have the previous/next pagination links }}
-    <div class="hidden">
-        {{pagination}}
-    </div>
+    {{pagination}}
  </section>

@@ -16,13 +16,12 @@
     <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
     {{! Styles'n'Scripts }}
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     
     {{! Include for changeable bootstrap theme }} 
     {{> bootstrap-theme }}
 
-       <!-- Google Authorship and Publisher Markup -->
-    {{> google-authorship}}
+    <link href="{{asset "css/main.css"}}" rel="stylesheet" type="text/css">
 
         <!-- Custom Fonts -->
     <link href="{{asset "font-awesome/css/font-awesome.min.css"}}" rel="stylesheet" type="text/css">
@@ -61,7 +60,5 @@
     <!-- Custom Theme JavaScript -->
     <script src="{{asset "js/grayscale.js"}}"></script>
 
-    {{! Google analytics include }}    
-    {{> google-analytics}}
 </body>
 </html>

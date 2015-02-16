@@ -1,0 +1,39 @@
+{{!< default}}
+
+<section id="about" class="container content-section text-center">
+    {{#author}}
+        <h1>{{name}}</h1>
+    {{/author}} 
+    {{#foreach posts}}
+
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+				<header>
+					<h2 itemprop="name headline"><a href="{{url}}">{{{title}}}</a></h2>
+				</header>
+				<section class="visible-xs-block mobile-side">
+					<p>
+						<time datetime="{{date format='YYYY-MM-DD'}}">{{date format='DD MMM YYYY'}}</time>
+						<span class="text-muted">
+							{{tags separator=" / "}}
+						</span>
+					</p>
+				</section>
+				<section itemprop="articleBody text">
+					<p>{{excerpt}}&hellip;</p>
+				</section>
+				<footer>
+					<p>
+						<a href="{{url}}">Read More</a>
+					</p>
+				</footer>
+            </div>    
+        </div>
+
+    {{/foreach}}
+
+    {{!! After all the posts, we have the previous/next pagination links }}
+    <div class="hidden">
+        {{pagination}}
+    </div>
+ </section>

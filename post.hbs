@@ -1,0 +1,63 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+<section id="about" class="container content-section">
+ {{#post}}
+      <div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<header class="text-center">
+				<h2 itemprop="name headline"><a href="{{url}}">{{{title}}}</a></h2>
+				<p>
+					<time datetime="{{date format='YYYY-MM-DD'}}">{{date format='DD MMM YYYY'}}</time>
+					<span class="text-muted">
+						{{tags separator=" / "}}
+					</span>
+				</p>
+			</header>
+			<section itemprop="articleBody text">
+			{{content}}
+			</section>
+			<section class='text-center'>
+			{{#author}}
+				<div class="media">
+					{{#if image}}
+					<a class="pull-left" href="{{url}}">
+						<img class="media-object no-fluid" alt="{{name}}" src="{{image}}" style="width: 64px; height: 64px;">
+					</a>
+					{{/if}}
+					<div class="media-body">
+						<h4 class="media-heading">by <a href="{{url}}" rel="author" itemprop="url name">{{name}}</a></h4>
+						{{#if bio}}
+						<p>{{bio}}</p>
+						{{else}}
+						<p>Read <a href="{{url}}">more posts</a> by this author.</p>
+						{{/if}}
+						{{#if website}}
+							<p><a href="{{website}}">{{website}}</a></p>
+						{{/if}}
+					</div>
+				</div>
+			{{/author}}
+			<span>Share <i class="fa fa-share"></i></span><br/><br/>
+			<ul class="list-inline banner-social-buttons">
+				<li>
+					<a href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+				</li>
+				<li>
+					<a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" class="btn btn-default btn-lg"><i class="fa fa-facebook fa-fw"></i> <span class="network-name">Facebook</span></a>
+				</li>
+				<li>
+					<a href="https://plus.google.com/share?url={{url absolute="true"}}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+				</li>
+			</ul>
+			</section>
+		</div>
+       </div>
+    {{/post}}
+</section>
+
+{{! Comments include }}    
+<!--{{> comments}}-->
+
